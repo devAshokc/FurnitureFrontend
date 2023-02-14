@@ -6,6 +6,7 @@ import * as yup from "yup"
 import { useFormik } from 'formik';
 import { API } from './global';
 import { toast, ToastContainer } from 'react-toastify';
+import { Box } from '@mui/system';
 
 const loginValidationSchema = yup.object({
   email: yup.string().required("Why not fill this e-mail ID?").min(8),
@@ -32,7 +33,6 @@ export function Login() {
       headers: { "Content-Type": "application/json" }
     })
       .then((data) => data.json())
-      // .then(() => navigate(`/products`))
       .then(data => {
         console.log(data)
         if (data) {
@@ -92,12 +92,13 @@ export function Login() {
             type='submit'
             className='button-auth'
             variant="contained"
-          // onClick={() => navigate('/products')}
           >
             L<span>ogin</span>
           </Button>
-
+        <Box sx={{display:"flex",flexDirection:"column",textAlign:"center",  gap:1}}>
           <Link className='auth-link' to="/users/signup">Create new account</Link>
+          <Link onClick={()=>navigate(-1)}>Back</Link>
+          </Box>
         </form>
         <ToastContainer />
       </Card>

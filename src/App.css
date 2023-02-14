@@ -148,9 +148,7 @@ body {
     text-transform: lowercase;
 }
 
-.auth-link {
-    margin-bottom: 3rem;
-}
+
 
 .add-product-form {
     display: flex;
