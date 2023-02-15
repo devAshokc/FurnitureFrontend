@@ -1,8 +1,7 @@
-// import { useState } from 'react';
 import './App.css';
-// import {INITIAL_PRODUCT_LIST} from "./INITIAL_PRODUCT_LIST"
 import { Route, Routes } from 'react-router-dom';
-// import { useEffect, useState } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { ProductList } from './components/ProductList';
 import { AddProduct } from './components/AddProduct';
 import { ProductDetails } from './components/ProductDetails';
@@ -19,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <div className='routes-container'>
+      <ToastContainer />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/products' element={<ProductList  />} />

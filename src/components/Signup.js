@@ -4,7 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import { useFormik } from "formik";
 import { API } from "./global";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import * as yup from "yup";
 import { Box } from "@mui/material";
 
@@ -46,14 +47,7 @@ export function Signup() {
       .then(
         () =>
           toast.success("Account Created Successfully", {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
+            position: toast.POSITION.TOP_RIGHT
           }),
         navigate(`/users/login`)
       );
@@ -61,7 +55,7 @@ export function Signup() {
 
   return (
     <div className="home-fr">
-      <Card sx={{ backgroundColor: "lightgreen" }} className="auth-container">
+      <Card  className="auth-container">
         <form onSubmit={handleSubmit} className="auth-form">
           <h2>SIGNUP</h2>
 
@@ -136,7 +130,6 @@ export function Signup() {
             <Link onClick={() => navigate(-1)}>Back</Link>
           </Box>
         </form>
-        <ToastContainer />
       </Card>
     </div>
   );

@@ -115,6 +115,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url('https://img.freepik.com/premium-photo/modern-home-decoration-mock-up-furniture-interior-design-minimal-living-room-black-wall-texture-background-3d-rendering_221619-942.jpg?w=1060');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: contain;
 }
 
 .auth-form {

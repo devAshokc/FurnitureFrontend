@@ -5,7 +5,8 @@ import TextField from '@mui/material/TextField';
 import * as yup from "yup"
 import { useFormik } from 'formik';
 import { API } from './global';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Box } from '@mui/system';
 
 const loginValidationSchema = yup.object({
@@ -39,17 +40,13 @@ export function Login() {
           localStorage.setItem("Authorization", data.token)
           if (data.message === "Successful login") {
             navigate(`/products`)
+            toast.success('Success login !', {
+              position: toast.POSITION.TOP_RIGHT
+          })
           } else {
             toast.error(`Invalid Credentials`, {
-              position: "top-center",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-            })
+              position:toast.POSITION.TOP_RIGHT
+              })
           }
         }
       })
@@ -58,7 +55,7 @@ export function Login() {
 
   return (
     <div className="home-fr">
-      <Card sx={{ backgroundColor: "lightgreen" }} className='auth-container'>
+      <Card className='auth-container'>
         <form onSubmit={handleSubmit} className='auth-form'>
           <h2>LOGIN</h2>
           <TextField
@@ -100,7 +97,6 @@ export function Login() {
           <Link onClick={()=>navigate(-1)}>Back</Link>
           </Box>
         </form>
-        <ToastContainer />
       </Card>
     </div>
   );
