@@ -55,7 +55,7 @@ export function Signup() {
 
   return (
     <div className="home-fr">
-      <Card  className="auth-container">
+      <Card  className="auth-container" elevation={5}>
         <form onSubmit={handleSubmit} className="auth-form">
           <h2>SIGNUP</h2>
 
@@ -123,7 +123,7 @@ export function Signup() {
           >
             S<span>ignup</span>
           </Button>
-          <Box sx={{display:"flex",flexDirection:"column",textAlign:"center", gap:1}}>
+          <Box sx={{display:"flex",flexDirection:"column",textAlign:"center", gap:2, marginBottom:"1rem"}}>
             <Link className="auth-link" to="/users/login">
               Already have an account
             </Link>

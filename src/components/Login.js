@@ -55,7 +55,7 @@ export function Login() {
 
   return (
     <div className="home-fr">
-      <Card className='auth-container'>
+      <Card className='auth-container'elevation={5}>
         <form onSubmit={handleSubmit} className='auth-form'>
           <h2>LOGIN</h2>
           <TextField
@@ -65,7 +65,6 @@ export function Login() {
             onBlur={handleBlur}
             error={touched.email && errors.email}
             helperText={touched.email && errors.email ? errors.email : null}
-
             className='textfield-auth'
             label="e-mail ID"
             variant="outlined"
@@ -78,7 +77,6 @@ export function Login() {
             onBlur={handleBlur}
             error={touched.password && errors.password}
             helperText={touched.password && errors.password ? errors.password : null}
-
             className='textfield-auth'
             type='password'
             label="Password"
@@ -92,7 +90,7 @@ export function Login() {
           >
             L<span>ogin</span>
           </Button>
-        <Box sx={{display:"flex",flexDirection:"column",textAlign:"center",  gap:1}}>
+        <Box sx={{display:"flex",flexDirection:"column",textAlign:"center",  gap:1,  marginBottom:"1rem"}}>
           <Link className='auth-link' to="/users/signup">Create new account</Link>
           <Link onClick={()=>navigate(-1)}>Back</Link>
           </Box>
