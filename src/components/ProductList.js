@@ -17,7 +17,11 @@ export function ProductList() {
       .then((data) => data.json())
       .then((pds) => setProductList(pds))
   }, [])
-
+  const handleClick = ()=>{
+    localStorage.clear();
+    navigate("/");
+    window.location.reload();
+  }
   return (
     <div>
       <AppBar className='navbar' position="static">
@@ -26,6 +30,7 @@ export function ProductList() {
             Fur<span className='logo-F'>ni</span>ture
           </Typography>
           <Button onClick={() => navigate('/products/add-product')} color="inherit">Add Product</Button>
+          <Button onClick={handleClick} color="inherit">Logout</Button>
         </Toolbar>
       </AppBar>
       <div className='product-list-container'>
