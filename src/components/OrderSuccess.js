@@ -9,6 +9,11 @@ export function OrderSuccess() {
   const styles = {
     color: "green"
   };
+  const handleClick = ()=>{
+    localStorage.clear();
+    navigate("/");
+    window.location.reload();
+  }
   return (
     <div>
       <AppBar className='navbar' position="relative">
@@ -17,6 +22,7 @@ export function OrderSuccess() {
             Fur<span className='logo-F'>ni</span>ture
           </Typography>
           <Button onClick={() => navigate('/products')} color="inherit">Home</Button>
+          <Button onClick={handleClick} color="inherit">Logout</Button>
         </Toolbar>
       </AppBar>
       <div className='order-success'>

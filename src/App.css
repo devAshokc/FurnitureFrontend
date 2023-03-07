@@ -65,13 +65,13 @@ body {
     opacity: 0.5;
 }
 
-.home-fr {
+/* .home-fr {
     background-image: url("https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?cs=srgb&dl=pexels-martin-p%C3%A9chy-1866149.jpg&fm=jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     color:white
-}
+} */
 
 .intro-container {
     position: relative;
@@ -111,11 +111,14 @@ body {
 }
 
 .auth-container {
-    width: 100%;
+    /* width: 100%; */
     height: 100vh;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+    display:grid;
+    height: 100vh;
+    place-content: center !important;
     background-image: url('https://wallpapers.com/images/featured/1p8lqahjzvgac2vw.jpg');
     background-size: cover;
     opacity: 0.9;
@@ -127,19 +130,21 @@ body {
 
 
 .auth-form {
-    width: 30%;
+    border-radius: 5%;
+    width: 400px;
     height: min-content;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     flex-wrap: nowrap;
-    color:white;
-    background-color: rgba(176, 147, 147, 0.95);
+    color:whitesmoke;
+    background-color: rgb(43 31 24 / 53%);
     border-radius:1.rem;
 }
 
 .auth-form>h2 {
+    text-decoration: underline;
     margin: 2rem;
 }
 
